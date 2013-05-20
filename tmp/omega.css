@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+}
+.omega-default {
+  margin-right: 0;
+}
+.omega-table {
+  padding-right: 0;
+}
+.omega-nth-default:nth-child(4n) {
+  margin-right: 0;
+}
+.omega-nth-default:nth-child(4n+1) {
+  clear: left;
+}
+.omega-nth-table:nth-child(4n) {
+  padding-right: 0;
+}
+.omega-complex-nth:nth-child(4n+1) {
+  margin-right: 0;
+}
+section {
+  *zoom: 1;
+  display: block;
+}
+section:before,
+section:after {
+  content: " ";
+  display: table;
+}
+section:after {
+  clear: both;
+}
+section .omega-default-left {
+  margin-right: 0;
+}
+section .omega-table-left {
+  padding-right: 0;
+}
+section .omega-nth-default-left:nth-child(4n) {
+  margin-right: 0;
+}
+section .omega-nth-default-left:nth-child(4n+1) {
+  clear: left;
+}
+section .omega-nth-table-left:nth-child(4n) {
+  padding-right: 0;
+}

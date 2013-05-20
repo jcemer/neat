@@ -7,7 +7,7 @@ describe "@include pad()" do
 
   context "with no argument" do
     it "sets padding to gutter percentage" do
-      expect('.pad-default').to have_rule('padding: 2.35765%')
+      expect('.pad-default').to have_rule('padding: 2.3576515979408077%')
     end
   end
 
@@ -25,7 +25,7 @@ describe "@include pad()" do
 
   context "with argument (default)" do
     it "uses default gutter percentage" do
-      expect('.pad-shorthand-default').to have_rule('padding: 30px 2.35765% 10px 2.35765%')
+      expect('.pad-shorthand-default').to have_rule('padding: 30px 2.3576515979408077% 10px 2.3576515979408077%')
     end
   end
 end

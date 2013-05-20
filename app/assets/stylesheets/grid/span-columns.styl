@@ -1,0 +1,39 @@
+span-columns(span, display = block) {
+  columns = shift(span)
+  container-columns = container-span(span)
+  display-table = container-display-table || display == table
+
+  direction = get-direction(layout-direction, default-layout-direction)
+  opposite-direction = get-opposite-direction(direction)
+
+  if (container-columns != grid-columns) {
+    parent-columns = container-columns
+  } else {
+    parent-columns = grid-columns
+  }
+
+  if display-table {
+    display: table-cell
+    {'padding-' + direction}: flex-gutter(container-columns)
+    width: flex-grid(columns, container-columns) + unit(flex-gutter(container-columns), '')
+
+    &:last-child {
+      width: flex-grid(columns, container-columns)
+      {'padding-' + direction}: 0
+    }
+  } else {
+    display: block
+    float: opposite-direction
+
+    if (display is collapse) {
+      width: flex-grid(columns, container-columns) + unit(flex-gutter(container-columns), '')
+    } else {
+      {'margin-' + direction}: flex-gutter(container-columns)
+      width: flex-grid(columns, container-columns)
+    }
+
+    &:last-child {
+      {'margin-' + direction}: 0
+    }
+  }
+}

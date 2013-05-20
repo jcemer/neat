@@ -1,0 +1,78 @@
+// Checks if a number is even
+// @function is-even($int) {
+//   @if $int%2 == 0   {
+//     @return true;
+//   }
+
+//   @return false;
+// }
+
+// Contains display value
+contains-display-value(query) {
+  table in query || block in query || inline-block in query || inline in query
+}
+
+// Parses the first argument of span-columns()
+container-span(span) {
+  if (length(span) != 0) {
+    last(span)
+  } else {
+    grid-columns
+  }
+}
+
+// // Generates a striped background
+// @function gradient-stops($grid-columns, $color: $visual-grid-color) {
+//   $transparent: rgba(0,0,0,0);
+
+//   $column-width: flex-grid(1, $grid-columns);
+//   $gutter-width: flex-gutter($grid-columns);
+//   $column-offset: $column-width;
+
+//   $values: ($transparent 0, $color 0);
+
+//   @for $i from 1 to $grid-columns*2 {
+//     @if is-even($i) {
+//       $values: append($values, $transparent $column-offset);
+//       $values: append($values, $color $column-offset);
+//       $column-offset: $column-offset + $column-width;
+//     }
+
+//     @else {
+//       $values: append($values, $color $column-offset);
+//       $values: append($values, $transparent $column-offset);
+//       $column-offset: $column-offset + $gutter-width;
+//     }
+//   }
+
+//   @return $values;
+// }
+
+// Layout direction
+get-direction(layout, default) {
+  direction = nil
+  
+  if (layout == LTR || layout == RTL) {
+    direction = direction-from-layout(layout)
+  } else {
+    direction = direction-from-layout(default)
+  }
+  
+  direction
+}
+
+direction-from-layout(layout) {
+  direction = nil
+
+  if (layout == LTR) {
+    direction = right
+  } else {
+    direction = left
+  }
+
+  direction
+}
+
+get-opposite-direction(direction) {
+  opposite-position(direction)
+}

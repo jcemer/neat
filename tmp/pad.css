@@ -1,0 +1,15 @@
+* {
+  box-sizing: border-box;
+}
+.pad-default {
+  padding: 2.3576515979408077%;
+}
+.pad-explicit {
+  padding: 20px;
+}
+.pad-shorthand {
+  padding: 30px 20px 10px 5px;
+}
+.pad-shorthand-default {
+  padding: 30px 2.3576515979408077% 10px 2.3576515979408077%;
+}

@@ -1,0 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+$tablet: new-breakpoint(max-width 768px12) include media($tablet),
+.responsive-element include media($tablet) {
+  color: #000;
+}
+#visual-grid-breakpoints {
+  value: $visual-grid-breakpoints;
+}

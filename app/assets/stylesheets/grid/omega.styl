@@ -1,0 +1,65 @@
+// Remove last element gutter
+omega(query = block) {
+  have-n = query[1] == n
+  if (have-n) {
+    if (length(query) == 3) {
+      query = (s('%sn', query[0]) query[2])
+    } else {
+      query = (s('%sn', query[0]))
+    }
+  }
+
+  have-table = table in query
+  have-auto = auto in query
+  direction = get-direction(layout-direction, default-layout-direction)
+
+  if (length(query) == 1) {
+    if (have-auto) {
+      &:last-child {
+        {'margin-' + direction}: 0
+      }
+    } else if (false || contains-display-value(query)) { // stylus bug?!
+      if have-table {
+        {'padding-' + direction}: 0
+      } else {
+        {'margin-' + direction}: 0
+      }
+    } else {
+      nth-child(query[0], have-n, direction)
+    }
+  } else if (length(query) == 2) {
+    if have-table {
+      if have-auto {
+        &:last-child {
+          {'padding-' + direction}: 0
+        }
+      } else {
+        &:nth-child({query[0]}) {
+          {'padding-' + direction}: 0
+        }
+      }
+    } else {
+      if have-auto {
+        &:last-child {
+          {'margin-' + direction}: 0
+        }
+      } else {
+        nth-child(query[0], have-n, direction)
+      }
+    }
+  }
+}
+
+nth-child(query, have-n, direction) {
+  opposite-direction = get-opposite-direction(direction)
+
+  &:nth-child({query}) {
+    {'margin-' + direction}: 0
+  }
+
+  if have-n {
+    &:nth-child({query + '+1'}) {
+      clear: opposite-direction
+    }
+  }
+}

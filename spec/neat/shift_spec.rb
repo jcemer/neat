@@ -7,19 +7,19 @@ describe "@include shift()" do
 
   context "with no argument" do
     it "shifts element one column in the default direction" do
-      expect('.shift-default').to have_rule('margin-left: 8.5298%')
+      expect('.shift-default').to have_rule('margin-left: 8.5298042998284%')
     end
   end
 
   context "with argument (2)" do
     it "shifts element 2 columns in the default direction" do
-      expect('.shift-positive').to have_rule('margin-left: 17.05961%')
+      expect('.shift-positive').to have_rule('margin-left: 17.0596085996568%')
     end
   end
 
   context "with argument (-3)" do
     it "shifts element 3 columns in the opposite direction" do
-      expect('.shift-negative').to have_rule('margin-left: -25.58941%')
+      expect('.shift-negative').to have_rule('margin-left: -25.5894128994852%')
     end
   end
 

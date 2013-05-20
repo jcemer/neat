@@ -1,0 +1,10 @@
+pad(padding = flex-gutter()) {
+  padding-list = ()
+  for value in padding {
+    if (value == default) {
+        value = flex-gutter()
+    }
+    push(padding-list, value)
+  }
+  padding: padding-list
+}

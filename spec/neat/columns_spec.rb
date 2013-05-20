@@ -7,11 +7,11 @@ describe "@include span-columns()" do
 
   context "with argument (6) in a twelve-column grid" do
     it "sets width in percentage" do
-      expect('.span-columns-default').to have_rule('width: 48.82117%')
+      expect('.span-columns-default').to have_rule('width: 48.821174201029585%')
     end
 
     it "sets gutter in percentage" do
-      expect('.span-columns-default').to have_rule('margin-right: 2.35765%')
+      expect('.span-columns-default').to have_rule('margin-right: 2.3576515979408077%')
     end
 
     it "sets display to block" do
@@ -29,11 +29,11 @@ describe "@include span-columns()" do
 
   context "when nested" do
     it "sets relative width in percentage" do
-      expect('.span-columns-default .span-columns-nested').to have_rule('width: 30.11389%')
+      expect('.span-columns-default .span-columns-nested').to have_rule('width: 30.1138947235848%')
     end
 
     it "sets relative gutter in percentage" do
-      expect('.span-columns-default .span-columns-nested').to have_rule('margin-right: 4.82916%')
+      expect('.span-columns-default .span-columns-nested').to have_rule('margin-right: 4.829157914622806%')
     end
   end
 
@@ -43,17 +43,17 @@ describe "@include span-columns()" do
     end
 
     it "sets padding in percentage" do
-      expect('.span-columns-table').to have_rule('padding-right: 2.35765%')
+      expect('.span-columns-table').to have_rule('padding-right: 2.3576515979408077%')
     end
 
     it "substracts gutter from width of last element" do
-      expect('.span-columns-table:last-child').to have_rule('width: 48.82117%')
+      expect('.span-columns-table:last-child').to have_rule('width: 48.821174201029585%')
     end
   end
 
 	context "with argument (collapse)" do
 		it "appends gutter width to column width" do
-			expect('.span-columns-collapse').to have_rule('width: 51.17883%')
+			expect('.span-columns-collapse').to have_rule('width: 51.178825798970394%')
 		end
 
 		it "removes the next gutter" do
